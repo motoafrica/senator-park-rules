@@ -32,8 +32,19 @@
       </div>
 
       <div class="flex flex-wrap gap-2" id="categoryChips">
-        <button onclick="filterCategory('all')" class="chip-btn bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-semibold transition">All Rules</button>
-        <button onclick="filterCategory('management')" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Management Rules</button>
-        <button onclick="filterCategory('conduct')" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Conduct Rules</button>
-        <button onclick="filterCategory('finance')" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Levies & Finance</button>
-        <button onclick="filterCategory('security')" class="chip-btn bg-slate
+        <button onclick="filterCategory('all', event)" class="chip-btn bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-semibold transition">All Rules</button>
+        <button onclick="filterCategory('management', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Management Rules</button>
+        <button onclick="filterCategory('conduct', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Conduct Rules</button>
+        <button onclick="filterCategory('finance', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Levies & Finance</button>
+        <button onclick="filterCategory('security', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Security & Access</button>
+        <button onclick="filterCategory('maintenance', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Maintenance & Repairs</button>
+      </div>
+    </div>
+
+    <!-- Rule Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="rulesGrid">
+
+      <!-- ================= MANAGEMENT RULES ================= -->
+
+      <!-- Management Rule: Trustees & Meetings -->
+      <div class="rule-card bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between"
