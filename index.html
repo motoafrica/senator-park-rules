@@ -28,17 +28,17 @@
     <!-- Search & Quick Filters -->
     <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8">
       <div class="relative mb-4">
-        <input type="text" id="searchInput" placeholder="Search all rules (e.g., levy, trustee, geyser, noise, rentals, security)..." class="w-full pl-4 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm transition">
+        <input type="text" id="searchInput" placeholder="Search all rules instantly (e.g., levy, trustee, geyser, noise, rentals, security, deliveries, pets)..." class="w-full pl-4 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white text-sm transition">
       </div>
 
       <div class="flex flex-wrap gap-2" id="categoryChips">
-        <button onclick="filterCategory('all', event)" class="chip-btn bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-semibold transition">All Rules</button>
+        <button onclick="filterCategory('all', event)" class="chip-btn bg-slate-900 text-white px-4 py-2 rounded-lg text-xs font-semibold transition">All Rules (Complete)</button>
         <button onclick="filterCategory('management', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Management Rules</button>
         <button onclick="filterCategory('conduct', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-lg text-xs font-semibold transition">Conduct Rules</button>
       </div>
     </div>
 
-    <!-- Rule Grid -->
+    <!-- Rule Grid (All Rules Included) -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="rulesGrid">
 
       <!-- Management Rule: Trustees & Meetings -->
@@ -67,7 +67,7 @@
           <h3 class="font-bold text-lg text-slate-900 mb-2">Levy Contributions & Quotas</h3>
           <ul class="space-y-2 text-sm text-slate-600">
             <li>• <strong>Due Date:</strong> Levies are payable monthly in advance on or before the <strong>1st day of each month</strong>.</li>
-            <li>• <strong>Participation Quotas:</strong> Residential: <strong>0.5484%</strong>; Commercial: <strong>7.8688%</strong>.</li>
+            <li>• <strong>Participation Quotas:</strong> Residential section: <strong>0.5484%</strong>; Commercial section: <strong>7.8688%</strong>.</li>
             <li>• <strong>Reserve Fund:</strong> A statutory reserve fund is maintained for long-term maintenance and capital expenses.</li>
           </ul>
         </div>
@@ -136,11 +136,11 @@
         </div>
       </div>
 
-      <!-- Conduct Rule: Security & Deliveries -->
-      <div class="rule-card bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct">
+      <!-- Conduct & Security Rule: Deliveries & Access Control -->
+      <div class="rule-card bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct management">
         <div>
           <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded">Conduct</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded">Conduct & Security</span>
             <span class="text-xs text-slate-400">Rule 3.3</span>
           </div>
           <h3 class="font-bold text-lg text-slate-900 mb-2">Deliveries & Access Control</h3>
