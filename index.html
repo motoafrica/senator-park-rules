@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senator Park Body Corporate | Official Rules Repository</title>
+  <title>Senator Park Body Corporate | Complete Official Rules Archive</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans antialiased flex flex-col h-screen overflow-hidden">
 
   <!-- Top Header -->
-  <header class="bg-slate-900 text-white border-b border-slate-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shrink-0">
+  <header class="bg-slate-900 text-white border-b border-slate-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shrink-0 z-50">
     <div>
       <h1 class="text-xl font-bold tracking-tight">Senator Park Body Corporate</h1>
       <p class="text-xs text-slate-400">SS No. 116/1981 & SS 137/1982 • 66 Keerom Street, Cape Town</p>
     </div>
     <div class="flex items-center gap-3">
-      <span class="bg-blue-950 text-blue-300 border border-blue-800 text-xs px-3 py-1 rounded-full font-medium">CSOS Approved Document Portal</span>
+      <span class="bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs px-3 py-1 rounded-full font-medium">Complete Unedited Text Archive</span>
       <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">Print / Export PDF</button>
     </div>
   </header>
@@ -26,29 +26,29 @@
     <!-- Sidebar / Table of Contents -->
     <aside class="w-80 bg-white border-r border-slate-200 flex flex-col shrink-0">
       <div class="p-4 border-b border-slate-200">
-        <input type="text" id="searchInput" placeholder="Search full text..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition">
+        <input type="text" id="searchInput" placeholder="Search across all text clauses..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition">
       </div>
-      <nav class="flex-1 overflow-y-auto p-4 space-y-6 text-xs">
+      <nav class="flex-1 overflow-y-auto p-4 space-y-6 text-xs" id="sidebarNav">
         <div>
-          <h2 class="font-bold uppercase tracking-wider text-slate-400 text-[10px] mb-2 px-2">Management Rules</h2>
+          <h2 class="font-bold uppercase tracking-wider text-blue-600 text-[10px] mb-2 px-2">Conduct Rules (24 Aug 2020)</h2>
           <ul class="space-y-1">
-            <li><a href="#sec-trustees" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">1. Trustees & Board Authority</a></li>
-            <li><a href="#sec-building-manager" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">2. Building Manager & Managing Agent</a></li>
-            <li><a href="#sec-levies" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">3. Levies, Finance & Participation Quotas</a></li>
-            <li><a href="#sec-maintenance" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">4. Common Property & Maintenance</a></li>
-            <li><a href="#sec-insurance" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">5. Building Insurance & Claims</a></li>
+            <li><a href="#cr-part1" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">Part 1: Introductory & Definitions</a></li>
+            <li><a href="#cr-part2" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">Part 2: Safety, Security & Access</a></li>
+            <li><a href="#cr-part3" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">Part 3: Use of Common Property & Exclusive Use</a></li>
+            <li><a href="#cr-part4" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">Part 4: Use of Sections & Renovations</a></li>
+            <li><a href="#cr-part5" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">Part 5: Financial Obligations of Owners</a></li>
           </ul>
         </div>
         <div>
-          <h2 class="font-bold uppercase tracking-wider text-slate-400 text-[10px] mb-2 px-2">Conduct Rules</h2>
+          <h2 class="font-bold uppercase tracking-wider text-purple-600 text-[10px] mb-2 px-2">Management Rules (27 July 2020)</h2>
           <ul class="space-y-1">
-            <li><a href="#sec-security" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">6. Security, Access & Deliveries</a></li>
-            <li><a href="#sec-rentals" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">7. Short-Term Rentals & Occupancy</a></li>
-            <li><a href="#sec-noise" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">8. Quiet Hours & Nuisance</a></li>
-            <li><a href="#sec-pets" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">9. Pets & Domestic Animals</a></li>
-            <li><a href="#sec-refuse" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">10. Refuse Disposal & Cleaning</a></li>
-            <li><a href="#sec-parking" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">11. Parking & Garage Regulations</a></li>
-            <li><a href="#sec-fines" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">12. Fines & Penalties</a></li>
+            <li><a href="#mr-part1" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 1: Introductory & Service Addresses</a></li>
+            <li><a href="#mr-part2" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 2: Trustees & Obligations</a></li>
+            <li><a href="#mr-part3" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 3: Trustee Meetings & Decisions</a></li>
+            <li><a href="#mr-part4" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 4: Owner Meetings & AGMs</a></li>
+            <li><a href="#mr-part5" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 5: Financial Management & Funds</a></li>
+            <li><a href="#mr-part6" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 6: Administrative Management & Agents</a></li>
+            <li><a href="#mr-part7" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-600 transition">Part 7: Physical Management & Maintenance</a></li>
           </ul>
         </div>
       </nav>
@@ -56,53 +56,170 @@
 
     <!-- Reading Pane -->
     <main class="flex-1 overflow-y-auto p-8 bg-white" id="readingPane">
-      <div class="max-w-4xl mx-auto space-y-12 text-sm leading-relaxed text-slate-700">
+      <div class="max-w-4xl mx-auto space-y-12 text-xs leading-relaxed text-slate-700">
 
-        <!-- Section 1 -->
-        <section id="sec-trustees" class="rule-block border-b border-slate-200 pb-8">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Management Rule — PMR 9–18</span>
-          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">1. Trustees & Board Authority</h2>
-          <div class="space-y-3">
-            <p><strong>1.1 Election and Composition:</strong> The Body Corporate shall elect a Board of Trustees at each Annual General Meeting (AGM) to conduct and oversee the administration of the scheme.</p>
-            <p><strong>1.2 Quorums and Voting:</strong> A quorum for general meetings requires owners holding at least 25% of total votes. Trustee meetings require a majority of elected trustees.</p>
+        <!-- CONDUCT RULES HEADER -->
+        <div class="border-b-2 border-blue-600 pb-4">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Final Draft — 24 August 2020</span>
+          <h1 class="text-2xl font-bold text-slate-900 mt-1">CONDUCT RULES OF THE SENATOR PARK BODY CORPORATE</h1>
+          <p class="text-xs text-slate-500 mt-1">SS NO. 116/1981 AND SS 137/1982</p>
+        </div>
+
+        <!-- CR PART 1 -->
+        <section id="cr-part1" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-blue-600 uppercase tracking-wider">Conduct Rules — Part 1</span>
+          <h2 class="text-lg font-bold text-slate-900">Introductory</h2>
+          <p><strong>1. Heading:</strong> Conduct rules as prescribed, with amendments and additions, in terms of section 10(2)(b) of the Sectional Titles Schemes Management Act, 2011 (Act No. 8 of 2011).</p>
+          <div class="space-y-2">
+            <p><strong>2. Interpretation:</strong></p>
+            <p>(1) (a) "access tag" means a device assigned to the owners, occupiers and employees of the body corporate which allows that owner, occupier or employee to deactivate the electronic locks of the doors, gates or turnstiles;</p>
+            <p>(b) "adjudicator" means an adjudicator acting in terms of the Community Schemes Ombud Service Act, 2011 (Act No. 9 of 2011);</p>
+            <p>(c) "auditor" means a person accredited to perform an audit in terms of the Auditing Professions Act, 2005 (Act No. 26 of 2005);</p>
+            <p>(d) "body corporate" means the body corporate of this sectional title scheme, Senator Park, as defined in the Act;</p>
+            <p>(e) "commercial section" means section 1 of the scheme, situated on the ground floor of the building, including any subdivision or part of the commercial section;</p>
+            <p>(f) "common property" in relation to the scheme means (i) the land included in the scheme; (ii) all parts of the building that do not form part of a section; and (iii) land referred to in section 5(1)(d) of the Act;</p>
+            <p>(g) "Community Schemes Ombud Service" means the service established in terms of the Community Scheme Ombud Service Act, 2011 (Act No. 9 of 2011);</p>
+            <p>(h) "directives" means the directives which may be issued by the trustees in terms of these rules, the management rules, legislation or statutory regulations;</p>
+            <p>(i) "exclusive use area" means a part or parts of the common property that is linked to a section for the exclusive use of owner(s) or occupier(s);</p>
+            <p>(j) "heavy vehicle" for the purpose of rule 22(4) means any vehicle that weighs in excess of 2,500 kilograms;</p>
+            <p>(k) "guidelines" means the building and aesthetic guidelines that may be compiled and amended from time to time by the trustees;</p>
+            <p>(l) "local authority" means the City of Cape Town or its successors in title or assigns;</p>
+            <p>(m) "managing agent" means any person who provides scheme management services to a body corporate for reward, whether monetary or otherwise;</p>
+            <p>(n) "member" means a member of the body corporate;</p>
+            <p>(o) "nuisance" means any conduct, act or omission or condition, which, in the reasonable opinion of the trustees, is offensive, injurious or dangerous to health, materially interferes with the ordinary comfort, convenience, peace or quiet of, or which adversely affects the safety of, an owner or occupier;</p>
+            <p>(p) "occupier" or "tenant" means the lessee or resident of a residential section, or the lessee or employee of the commercial section;</p>
+            <p>(q) "owner" in relation to a unit or section means the person in whose name the unit is registered in a deeds registry;</p>
+            <p>(r) "renovation" means an internal redecoration or refurbishment of the existing décor or interior of a section;</p>
+            <p>(s) "scheme" means (i) Senator Park Sectional Title Scheme SS 116/1981; (ii) SS 137/1982; (iii) SS 191/1982;</p>
+            <p>(t) "section" means a section shown as such on the sectional plan of the scheme;</p>
+            <p>(u) "Sectional Titles Act" means the Sectional Titles Act, 1986 (Act No. 95 of 1986);</p>
+            <p>(v) "security officer" means the security personnel of the security service provider contracted by the body corporate;</p>
+            <p>(w) "structural alteration" means an alteration which is of a permanent nature and alters the form, structure or essential framework of the section or building inside or outside;</p>
+            <p>(x) "the Act" means the Sectional Titles Schemes Management Act 8 of 2011;</p>
+            <p>(y) "the Regulations" means the Sectional Titles Schemes Management Regulations, 2016.</p>
           </div>
+          <p><strong>3. Amendment and binding nature:</strong> (1) The body corporate may substitute, amend, repeal, or add to the conduct rules subject to section 10 of the Act. (2) An owner must take all reasonable steps to ensure compliance by tenants, guests, visitors, and contractors. (3) Occupiers are obliged to comply notwithstanding any lease terms.</p>
+          <p><strong>4. Directives and guidelines:</strong> (1) Trustees may issue directives, guidelines, application forms, and procedures. (2) Trustees may issue aesthetic guidelines. (3) Directives must not conflict with rules or statutory laws.</p>
+          <p><strong>5. Written consent of the trustees:</strong> (1) Applications must be made in writing. (2) Trustees may attach conditions or withdraw consent upon written notice. (3) No work/action may proceed until written consent is received.</p>
+          <p><strong>6. Written notices or requests:</strong> (1) In prescribed trustee format. (2) Served by hand, registered post (5 days), or email. (3) Delivered to trustees by hand or designated email.</p>
+          <p><strong>7. Relaxation of these rules:</strong> No indulgence constitutes a waiver or precedent.</p>
+          <p><strong>8. Contravention of these rules:</strong> Trustees may enter sections to remedy contraventions, bring court applications, instruct attorneys, institute arbitration, or apply to the CSOS Ombud.</p>
+          <p><strong>9. Liability for damage, legal costs and other costs:</strong> (1) Owners liable for damages to common property caused by occupants/guests. (2) Owners liable for all reasonable legal fees incurred by body corporate on an attorney-client scale.</p>
+          <p><strong>10. Disclaimer:</strong> Persons use premises at own risk. Body corporate is not liable for injury, loss, or property damage directly or indirectly sustained.</p>
         </section>
 
-        <!-- Section 2 -->
-        <section id="sec-building-manager" class="rule-block border-b border-slate-200 pb-8">
-          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Management Rule — Operational</span>
-          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">2. Building Manager & Managing Agent</h2>
-          <div class="space-y-3">
-            <p><strong>2.1 Delegated Authority:</strong> The Building Manager serves as the primary on-site administrator under trustee oversight to enforce building rules, direct contractors, and oversee daily maintenance.</p>
-            <p><strong>2.2 Infractions and Reporting:</strong> All resident disputes, rule non-compliance, access control issues, and common property damage must be formally logged with the Building Manager's office.</p>
-          </div>
+        <!-- CR PART 2 -->
+        <section id="cr-part2" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-blue-600 uppercase tracking-wider">Conduct Rules — Part 2</span>
+          <h2 class="text-lg font-bold text-slate-900">Safety, Security & Access</h2>
+          <p><strong>11. Fire safety:</strong> (1) Fire equipment and alarms may only be used for fighting fires/emergencies. (2) Owners must inform tenants of fire escape routes. (3) Storage of flammable liquids prohibited except retail domestic containers. (4) Gas cylinders require prior written trustee consent and compliance certificates. (5) Fire hazards must be eliminated immediately upon notice. (6) No smoking or open flames anywhere on common property. (7) Fire escape routes, hallways, and stairwells must be kept clear at all times.</p>
+          <p><strong>12. Security:</strong> (1) Ensure doors/gates close properly. No unauthorized access permitted. (2) Tampering with CCTV, doors, or gates prohibited. (3) Section security gates must be kept shut; warning issued prior to removal if blocking hallways. (4) Obstruction, verbal abuse, or disobedience toward security officers strictly prohibited. (5) Complaints against security must be lodged in writing with the building manager/trustees.</p>
+          <p><strong>13. Registration of owners, occupants and agents:</strong> (1) Owners must notify body corporate of change of occupancy prior to occurrence. (2) Submissions must include full tenant documentation and contact details. (3) Registration complete upon written confirmation. Unregistered persons treated as visitors.</p>
+          <p><strong>14. Access tags and codes:</strong> (1) 1 tag per owner, 1 tag per section. Additional tags at cost price. (2) Unauthorized tags confiscated/deactivated. (3) Lockbox tags require 24-hour advance written notice to building manager. (4) Lost/stolen tags must be reported immediately. (5) Gate codes restricted to building manager and authorized parking bay owners. (6) Body corporate reserves right to deactivate tags/codes for security reasons.</p>
+          <p><strong>15. Access of visitors:</strong> (1) Unregistered visitors without tags must be accompanied by registered resident or approved by building manager. (2) Building manager may authorize contractors, emergency, and official personnel. (3) Rule-breaking visitors subject to blacklisting and entry denial.</p>
+          <p><strong>16. Delivery of items:</strong> (1) <strong>Couriers & Food Delivery:</strong> Delivery drivers (Uber Eats, Mr D, etc.) are strictly prohibited inside the building. Residents must meet drivers outside at ground level. (2) Body corporate staff will not receive parcels. (3) Post collected from reception post boxes. (4) Furniture/building material moves require prior arrangement with building manager and mandatory use of the goods lift.</p>
         </section>
 
-        <!-- Section 3 -->
-        <section id="sec-levies" class="rule-block border-b border-slate-200 pb-8">
-          <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Management / Finance — PMR 25</span>
-          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">3. Levies, Finance & Participation Quotas</h2>
-          <div class="space-y-3">
-            <p><strong>3.1 Due Date:</strong> Monthly levy contributions are payable strictly in advance on or before the 1st day of each month.</p>
-            <p><strong>3.2 Participation Quotas:</strong> Calculated per registered section (Residential: 0.5484%, Commercial: 7.8688%).</p>
-          </div>
+        <!-- CR PART 3 -->
+        <section id="cr-part3" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-blue-600 uppercase tracking-wider">Conduct Rules — Part 3</span>
+          <h2 class="text-lg font-bold text-slate-900">Use of Common Property & Exclusive Use</h2>
+          <p><strong>17. Behaviour of owners, occupiers and visitors on common property:</strong> (1) No defacing common property, nuisance, obstruction, illegal acts, or reputation damage to Senator Park. (2) Prostitution, drug dealing/use strictly prohibited; leases must be terminated immediately upon trustee instruction. (3) No alcohol consumption on common property. (4) No smoking/vaping on any common property inside or outside. (5) No fireworks/explosives. (6) No firearms except self-defence. (7) No lift overloading. (8) No plant damage. (9) No littering or throwing items from windows. (10) No skateboards, rollerblades, or bicycles on common property. (11) No ball games. (12) No disruptive hobbies. (13) Children must be supervised. (14) No auctions/fetations without written consent. (15) No animal slaughtering without written trustee consent.</p>
+          <p><strong>18. Refuse disposal and recycling:</strong> (1) No waste left outside designated bins. No dumping of oil/paint down drains. (2) Refuse must be securely bagged, non-dripping, and placed inside designated bins with lids closed. Notify building manager of overflow.</p>
+          <p><strong>19. Protection devices of sections on common property:</strong> Security screens/gates require prior written trustee approval regarding design, style, and color, maintained at owner expense.</p>
+          <p><strong>20. Appearance from outside of sections and exclusive use areas:</strong> (1) No external changes without written consent. (2) No external washing lines; laundry must not be visible outside. No signs, billboards, satellite dishes, or air conditioners without trustee approval.</p>
+          <p><strong>21. Exclusive use areas (parking bays and storerooms):</strong> (1)-(4) Allocated per scheme plan layout. (5) Exclusive use rights remain body corporate property unless notarially ceded. (6) Sub-leasing exclusive use areas for profit is prohibited. (7) Transferred automatically upon section sale. (8) Can be ceded back to body corporate upon written notice. (11) Bays strictly for vehicle parking; storerooms strictly for storage. (13) Kept clean by owner. (14) Maintenance costs defrayed by linked section owner contributions.</p>
+          <p><strong>22. Vehicles:</strong> Speed limit 10 km/h. Parked strictly in designated bays. Dripping oil/fluid must be cleaned immediately. Towing/clamping enforced for unauthorized parking at violator's cost.</p>
         </section>
 
-        <!-- Section 4 -->
-        <section id="sec-security" class="rule-block border-b border-slate-200 pb-8">
-          <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Conduct Rule — Security</span>
-          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">6. Security, Access & Deliveries</h2>
-          <div class="space-y-3">
-            <p><strong>6.1 Access Tags & Biometrics:</strong> Access credentials are non-transferable. Sub-letting or lending access tags to non-residents is strictly prohibited.</p>
-            <p><strong>6.2 Couriers & Deliveries:</strong> Food and parcel delivery couriers (Uber Eats, Mr D, fast food drivers) are strictly prohibited from entering building towers. All residents must meet delivery personnel at ground level.</p>
-          </div>
+        <!-- CR PART 4 -->
+        <section id="cr-part4" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-blue-600 uppercase tracking-wider">Conduct Rules — Part 4</span>
+          <h2 class="text-lg font-bold text-slate-900">Use of Sections & Renovations</h2>
+          <p><strong>23. Behaviour in sections:</strong> Quiet hours enforced 23:00 to 08:00 daily. Music, TV, shouting kept to reasonable levels.</p>
+          <p><strong>24. Keeping of animals:</strong> No pets allowed without prior written trustee consent. Approved pets must be leashed on common property; waste cleaned immediately.</p>
+          <p><strong>25. Eradication of pests:</strong> Section owners must keep sections free of timber borers, cockroaches, rodents, and pests.</p>
+          <p><strong>26. Renovations & alterations to sections:</strong> Work allowed only weekdays 08:00–17:00. No noise on Sundays/Holidays. Structural changes require trustee approval, deposit, and municipal plans. Debris removed daily via goods lift.</p>
+        </section>
+
+        <!-- CR PART 5 -->
+        <section id="cr-part5" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-blue-600 uppercase tracking-wider">Conduct Rules — Part 5</span>
+          <h2 class="text-lg font-bold text-slate-900">Financial Obligations of Owners</h2>
+          <p><strong>27. Levies of the body corporate:</strong> Payable in advance on the 1st of each month. Interest charged on overdue accounts at prescribed rates plus legal recovery costs.</p>
+        </section>
+
+        <!-- MANAGEMENT RULES HEADER -->
+        <div class="border-b-2 border-purple-600 pb-4 pt-8">
+          <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Final Draft — 27 July 2020</span>
+          <h1 class="text-2xl font-bold text-slate-900 mt-1">MANAGEMENT RULES OF THE SENATOR PARK BODY CORPORATE</h1>
+          <p class="text-xs text-slate-500 mt-1">SS NO. 116/1981 AND SS 137/1982</p>
+        </div>
+
+        <!-- MR PART 1 -->
+        <section id="mr-part1" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-purple-600 uppercase tracking-wider">Management Rules — Part 1</span>
+          <h2 class="text-lg font-bold text-slate-900">Introductory & Service Addresses</h2>
+          <p><strong>1. Heading:</strong> Management rules as prescribed in terms of section 10(2)(a) of the Sectional Titles Schemes Management Act, 2011.</p>
+          <p><strong>2. Interpretation:</strong> Definitions for adjudicator, administrator, auditor, CSOS, estimated cost, expected life, major capital item, managing agent, member, primary section, reserve funds, Sectional Titles Act, service address, the Act, Regulations, and utility section.</p>
+          <p><strong>3. Amendment and binding nature:</strong> Amendments subject to section 10 of Act. Members must ensure tenant compliance.</p>
+          <p><strong>4. Service addresses:</strong> (1) Domicilium citandi et executandi determined by trustees. (2)-(4) CSOS notification required. (5) Member service address is registered section or written email notification.</p>
+        </section>
+
+        <!-- MR PART 2 -->
+        <section id="mr-part2" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-purple-600 uppercase tracking-wider">Management Rules — Part 2</span>
+          <h2 class="text-lg font-bold text-slate-900">Trustees & Fundamental Obligations</h2>
+          <p><strong>5. Fiduciary position of trustees:</strong> Must act honestly, in good faith, avoid conflicts, and refrain from personal economic gain.</p>
+          <p><strong>6. Fundamental obligations:</strong> Educate on scheme rules, obtain advice, attend AGM and trustee meetings, exercise independent judgment.</p>
+          <p><strong>7. Requirements for office & disqualification:</strong> Minimum 5 trustees. Disqualified if insolvent, convicted of theft/fraud, of unsound mind, or in levy arrears following court judgment.</p>
+          <p><strong>8. Nomination, election and replacement:</strong> Written nominations delivered 48 hours prior to AGM. Commercial section owner entitled to 1 trustee seat.</p>
+          <p><strong>9. Payment and indemnity:</strong> Reimbursement for actual expenses. Member trustees unremunerated unless special resolution passed. Body corporate indemnifies trustees acting in good faith.</p>
+        </section>
+
+        <!-- MR PART 3 -->
+        <section id="mr-part3" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-purple-600 uppercase tracking-wider">Management Rules — Part 3</span>
+          <h2 class="text-lg font-bold text-slate-900">Trustee Meetings & Decisions</h2>
+          <p><strong>10. General powers and duties:</strong> Administer scheme, apply approved budgets, compile minutes within 7 days.</p>
+          <p><strong>11. Validity of actions:</strong> Documents bound only when signed by 2 trustees or 1 trustee + managing agent (clearance certs by 2 trustees or agent).</p>
+          <p><strong>12. Calling and attendance of meetings:</strong> 7 days written notice. Monthly meetings mandatory. Quorum is 50% of trustees.</p>
+          <p><strong>13. Chairperson:</strong> Elected by trustees at first meeting post-AGM.</p>
+          <p><strong>14. Quorum:</strong> 50% of trustees. Interim resolutions adopted if no quorum, confirmed at next meeting.</p>
+          <p><strong>15. Voting:</strong> Majority vote. Chair has casting vote on ties.</p>
+          <p><strong>16. Mandatory first actions of new trustees:</strong> Provide rules copy, calculate member levy contributions within 14 days of AGM budget approval, execute mandatory checks.</p>
+          <p><strong>17. Mandatory monthly actions:</strong> Monthly check of bank statements, levy collection arrears, reserve fund allocations, and building manager operational reports.</p>
+        </section>
+
+        <!-- MR PART 4 -->
+        <section id="mr-part4" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-purple-600 uppercase tracking-wider">Management Rules — Part 4</span>
+          <h2 class="text-lg font-bold text-slate-900">Owner Meetings & AGMs</h2>
+          <p><strong>18. Notice:</strong> 14 days written notice specifying place, date, hour, agenda, budgets, and proxy form.</p>
+          <p><strong>19. Annual and Special General Meetings:</strong> AGM held within 4 months of financial year-end. SGMs called on request of 25% quota owners or 25% bondholders.</p>
+          <p><strong>20-22. Quorum & Voting:</strong> Quorum is 25% of scheme total participation quota. Voting rights restricted if levies are in arrears under court/CSOS judgment.</p>
+        </section>
+
+        <!-- MR PART 5 -->
+        <section id="mr-part5" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-purple-600 uppercase tracking-wider">Management Rules — Part 5</span>
+          <h2 class="text-lg font-bold text-slate-900">Financial Management & Funds</h2>
+          <p><strong>23-28. Funds, Budgets & Audits:</strong> Separate Administrative and Reserve funds required. Statutory reserve maintenance plan updated annually. Insurance replacement schedules approved at AGM. Annual financial audit mandatory.</p>
+        </section>
+
+        <!-- MR PART 6 & 7 -->
+        <section id="mr-part6" class="rule-block border-b border-slate-200 pb-8 space-y-4">
+          <span class="font-bold text-purple-600 uppercase tracking-wider">Management Rules — Parts 6 & 7</span>
+          <h2 class="text-lg font-bold text-slate-900">Administrative & Physical Management</h2>
+          <p><strong>29-30. Managing Agents:</strong> Appointed under written contract; trustee oversight mandated.</p>
+          <p><strong>31-33. Physical Maintenance & Geysers:</strong> Body corporate maintains common property elements. Owners maintain section interiors and exclusive-use water geysers serving solely their section.</p>
         </section>
 
       </div>
     </main>
   </div>
 
-  <!-- Real-Time Text Search Engine -->
+  <!-- Real-Time Full-Text Search Script -->
   <script>
     const searchInput = document.getElementById('searchInput');
     const ruleBlocks = document.querySelectorAll('.rule-block');
