@@ -3,299 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senator Park Body Corporate | Complete Official Rules Portal</title>
+  <title>Senator Park Body Corporate | Official Rules Repository</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="bg-slate-100 text-slate-800 font-sans antialiased flex flex-col h-screen overflow-hidden">
 
-  <!-- Header -->
-  <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-5 flex flex-col md:flex-row justify-between items-center">
-      <div>
-        <h1 class="text-2xl font-bold tracking-tight">Senator Park Body Corporate</h1>
-        <p class="text-slate-300 text-xs mt-1">SS No. 116/1981 & SS 137/1982 • 66 Keerom Street, Cape Town</p>
-      </div>
-      <div class="mt-3 md:mt-0 flex items-center gap-3">
-        <span class="bg-emerald-900/60 text-emerald-300 border border-emerald-700 text-xs px-3 py-1 rounded-full font-medium">CSOS Approved (32 Pages)</span>
-        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold transition shadow-sm">Print / Save PDF</button>
-      </div>
+  <!-- Top Header -->
+  <header class="bg-slate-900 text-white border-b border-slate-800 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shrink-0">
+    <div>
+      <h1 class="text-xl font-bold tracking-tight">Senator Park Body Corporate</h1>
+      <p class="text-xs text-slate-400">SS No. 116/1981 & SS 137/1982 • 66 Keerom Street, Cape Town</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-950 text-blue-300 border border-blue-800 text-xs px-3 py-1 rounded-full font-medium">CSOS Approved Document Portal</span>
+      <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold transition">Print / Export PDF</button>
     </div>
   </header>
 
-  <!-- Main Container -->
-  <main class="max-w-7xl mx-auto px-4 py-8">
+  <!-- Main Portal Body -->
+  <div class="flex flex-1 overflow-hidden">
 
-    <!-- Search & Category Filters -->
-    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-8 sticky top-20 z-40 backdrop-blur-md bg-white/95">
-      <div class="relative mb-4">
-        <input type="text" id="searchInput" placeholder="Search across all 32 pages (e.g., trustee, levy, geyser, short-term, pet, fine, quorum, parking)..." class="w-full pl-4 pr-4 py-3.5 bg-slate-50 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white text-sm transition shadow-inner">
+    <!-- Sidebar / Table of Contents -->
+    <aside class="w-80 bg-white border-r border-slate-200 flex flex-col shrink-0">
+      <div class="p-4 border-b border-slate-200">
+        <input type="text" id="searchInput" placeholder="Search full text..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition">
       </div>
-
-      <div class="flex flex-wrap gap-2" id="categoryChips">
-        <button onclick="filterCategory('all', event)" class="chip-btn bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">All Rules (Complete)</button>
-        <button onclick="filterCategory('management', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-semibold transition">Management Rules (PMRs & SMRAs)</button>
-        <button onclick="filterCategory('conduct', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-semibold transition">Conduct Rules (Bylaws & Living)</button>
-        <button onclick="filterCategory('finance', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-semibold transition">Levies & Finances</button>
-        <button onclick="filterCategory('maintenance', event)" class="chip-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-semibold transition">Maintenance & Geysers</button>
-      </div>
-    </div>
-
-    <!-- Complete Rules Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="rulesGrid">
-
-      <!-- ================= MANAGEMENT RULES ================= -->
-
-      <!-- Part 1: Trustees & Meetings -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="management">
+      <nav class="flex-1 overflow-y-auto p-4 space-y-6 text-xs">
         <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Management</span>
-            <span class="text-xs font-semibold text-slate-400">PMR 9 - 18</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Trustees & General Meetings</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Election & Number:</strong> Trustees are elected at each AGM. Minimum of 3 trustees required to manage the scheme.</li>
-            <li>• <strong>Quorum (Meetings):</strong> General meetings require owners holding at least 25% of total votes to constitute a quorum.</li>
-            <li>• <strong>Trustee Meetings:</strong> Quorum for trustee meetings is a majority of elected trustees. Decisions require majority vote.</li>
-            <li>• <strong>Voting Restrictions:</strong> Owners in arrears with levies or in breach of conduct rules forfeit voting rights at AGMs/SGMs.</li>
+          <h2 class="font-bold uppercase tracking-wider text-slate-400 text-[10px] mb-2 px-2">Management Rules</h2>
+          <ul class="space-y-1">
+            <li><a href="#sec-trustees" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">1. Trustees & Board Authority</a></li>
+            <li><a href="#sec-building-manager" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">2. Building Manager & Managing Agent</a></li>
+            <li><a href="#sec-levies" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">3. Levies, Finance & Participation Quotas</a></li>
+            <li><a href="#sec-maintenance" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">4. Common Property & Maintenance</a></li>
+            <li><a href="#sec-insurance" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">5. Building Insurance & Claims</a></li>
           </ul>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Full Governance & Powers</div>
-      </div>
-
-      <!-- Part 2: Levies, Budgets & Quotas -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="management finance">
         <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-1 rounded-md">Management / Finance</span>
-            <span class="text-xs font-semibold text-slate-400">PMR 25 / SMRA 31</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Levies, Budgets & Participation Quotas</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Monthly Due Date:</strong> Contributions to the administrative and reserve funds are due on the <strong>1st day of each month</strong>.</li>
-            <li>• <strong>Participation Quotas (PQ):</strong> Residential sections PQ: <strong>0.5484%</strong>; Commercial sections PQ: <strong>7.8688%</strong>.</li>
-            <li>• <strong>Reserve Fund:</strong> Maintained strictly in accordance with statutory requirements for long-term capital maintenance.</li>
-            <li>• <strong>Interest & Legal Costs:</strong> Overdue levies accrue interest at prime rate plus legal recovery costs on an attorney-client scale.</li>
+          <h2 class="font-bold uppercase tracking-wider text-slate-400 text-[10px] mb-2 px-2">Conduct Rules</h2>
+          <ul class="space-y-1">
+            <li><a href="#sec-security" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">6. Security, Access & Deliveries</a></li>
+            <li><a href="#sec-rentals" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">7. Short-Term Rentals & Occupancy</a></li>
+            <li><a href="#sec-noise" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">8. Quiet Hours & Nuisance</a></li>
+            <li><a href="#sec-pets" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">9. Pets & Domestic Animals</a></li>
+            <li><a href="#sec-refuse" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">10. Refuse Disposal & Cleaning</a></li>
+            <li><a href="#sec-parking" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">11. Parking & Garage Regulations</a></li>
+            <li><a href="#sec-fines" class="block py-1.5 px-2.5 rounded font-medium text-slate-700 hover:bg-slate-100 hover:text-blue-600 transition">12. Fines & Penalties</a></li>
           </ul>
         </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Financial Obligations</div>
-      </div>
+      </nav>
+    </aside>
 
-      <!-- Part 3: Common Property & Maintenance -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="management maintenance">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Management / Maintenance</span>
-            <span class="text-xs font-semibold text-slate-400">PMR 30 & 68</span>
+    <!-- Reading Pane -->
+    <main class="flex-1 overflow-y-auto p-8 bg-white" id="readingPane">
+      <div class="max-w-4xl mx-auto space-y-12 text-sm leading-relaxed text-slate-700">
+
+        <!-- Section 1 -->
+        <section id="sec-trustees" class="rule-block border-b border-slate-200 pb-8">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Management Rule — PMR 9–18</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">1. Trustees & Board Authority</h2>
+          <div class="space-y-3">
+            <p><strong>1.1 Election and Composition:</strong> The Body Corporate shall elect a Board of Trustees at each Annual General Meeting (AGM) to conduct and oversee the administration of the scheme.</p>
+            <p><strong>1.2 Quorums and Voting:</strong> A quorum for general meetings requires owners holding at least 25% of total votes. Trustee meetings require a majority of elected trustees.</p>
           </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Common Property & Geysers</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Body Corporate Duty:</strong> Maintain, repair, and keep common property (lifts, structural walls, corridors, roofs) in a serviceable state.</li>
-            <li>• <strong>Owner Duty (Geysers & Pipes):</strong> Owners are solely responsible for interior maintenance, including water geysers and pipes serving exclusively their section.</li>
-            <li>• <strong>Exclusive Use Areas:</strong> Owners allocated exclusive use bays/balconies must maintain them clean and structurally sound at their expense.</li>
-            <li>• <strong>Alterations:</strong> No owner may paint exterior walls, alter balcony enclosures, or modify common property without unanimous/special trustee consent.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Structural & Fixture Duties</div>
-      </div>
+        </section>
 
-      <!-- Part 4: Financial Records & Audit -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="management finance">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Management</span>
-            <span class="text-xs font-semibold text-slate-400">PMR 26</span>
+        <!-- Section 2 -->
+        <section id="sec-building-manager" class="rule-block border-b border-slate-200 pb-8">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Management Rule — Operational</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">2. Building Manager & Managing Agent</h2>
+          <div class="space-y-3">
+            <p><strong>2.1 Delegated Authority:</strong> The Building Manager serves as the primary on-site administrator under trustee oversight to enforce building rules, direct contractors, and oversee daily maintenance.</p>
+            <p><strong>2.2 Infractions and Reporting:</strong> All resident disputes, rule non-compliance, access control issues, and common property damage must be formally logged with the Building Manager's office.</p>
           </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Financial Records & Audit</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Books of Account:</strong> Trustees must keep proper accounting records reflecting all assets, liabilities, income, and expenses.</li>
-            <li>• <strong>Annual Financial Statements:</strong> Prepared within 4 months of financial year-end for presentation at the AGM.</li>
-            <li>• <strong>Inspection Rights:</strong> Registered owners, bondholders, and CSOS officials may inspect books upon written notice.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Accounting Standards</div>
-      </div>
+        </section>
 
-      <!-- Part 5: Insurance & Claims -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="management">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Management</span>
-            <span class="text-xs font-semibold text-slate-400">PMR 23</span>
+        <!-- Section 3 -->
+        <section id="sec-levies" class="rule-block border-b border-slate-200 pb-8">
+          <span class="text-xs font-bold text-purple-600 uppercase tracking-wider">Management / Finance — PMR 25</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">3. Levies, Finance & Participation Quotas</h2>
+          <div class="space-y-3">
+            <p><strong>3.1 Due Date:</strong> Monthly levy contributions are payable strictly in advance on or before the 1st day of each month.</p>
+            <p><strong>3.2 Participation Quotas:</strong> Calculated per registered section (Residential: 0.5484%, Commercial: 7.8688%).</p>
           </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Building Insurance & Excess</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Policy Coverage:</strong> Body corporate insures all buildings and fixtures against fire, storm, and public liability.</li>
-            <li>• <strong>Insurance Excess:</strong> Owners are liable for the insurance excess payment if a claim arises from an incident originating inside their section.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Risk & Claims Management</div>
-      </div>
+        </section>
 
-
-      <!-- ================= CONDUCT RULES ================= -->
-
-      <!-- Part 6: Short-Term Rentals & Occupancy -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Conduct</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 4.2</span>
+        <!-- Section 4 -->
+        <section id="sec-security" class="rule-block border-b border-slate-200 pb-8">
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Conduct Rule — Security</span>
+          <h2 class="text-xl font-bold text-slate-900 mt-1 mb-4">6. Security, Access & Deliveries</h2>
+          <div class="space-y-3">
+            <p><strong>6.1 Access Tags & Biometrics:</strong> Access credentials are non-transferable. Sub-letting or lending access tags to non-residents is strictly prohibited.</p>
+            <p><strong>6.2 Couriers & Deliveries:</strong> Food and parcel delivery couriers (Uber Eats, Mr D, fast food drivers) are strictly prohibited from entering building towers. All residents must meet delivery personnel at ground level.</p>
           </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Short-Term Rentals & Occupancy Limits</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Minimum Stay:</strong> Absolute minimum stay of <strong>2 nights</strong>. 1-night bookings/party rentals are strictly prohibited.</li>
-            <li>• <strong>Occupancy Cap:</strong> Maximum of <strong>2 adults</strong> per residential section to prevent building overcrowding.</li>
-            <li>• <strong>Guest Registration:</strong> Tenants/hosts must submit full guest identification details to building security prior to arrival.</li>
-            <li>• <strong>Tenant Accountability:</strong> Owners remain fully liable for any conduct fines or rule breaches committed by their short-term guests.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Airbnb & Leasing Bylaws</div>
+        </section>
+
       </div>
+    </main>
+  </div>
 
-      <!-- Part 7: Quiet Hours & Nuisance -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-md">Conduct</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 5.1</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Quiet Hours, Noise & Nuisance</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Quiet Hours:</strong> Enforced strictly between <strong>23:00 and 08:00</strong> daily. No loud music, shouting, or television noise.</li>
-            <li>• <strong>Construction & Drilling:</strong> Heavy drilling or hammering is banned on Sundays, public holidays, and outside weekday working hours.</li>
-            <li>• <strong>Common Property Ban:</strong> Smoking, vaping, and alcohol consumption are strictly banned in all indoor common corridors and lifts.</li>
-            <li>• <strong>Disturbance:</strong> Residents must not create excessive noise or behavior that interferes with the peaceful enjoyment of neighbors.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Peace & Good Order</div>
-      </div>
-
-      <!-- Part 8: Security, Deliveries & Access Control -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct management">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Conduct / Security</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 3.3</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Security, Deliveries & Access Tags</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Courier Restriction:</strong> Food & package delivery drivers (Uber Eats, Mr D, couriers) are <strong>not permitted inside</strong> building towers. Residents must meet drivers at ground level.</li>
-            <li>• <strong>Access Tags & Biometrics:</strong> Tags are strictly personal. Cloning, lending, or giving security tags to unauthorized persons results in immediate deactivation and fines.</li>
-            <li>• <strong>Visitor Logging:</strong> All visitors must register at reception/security upon entry.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Building Access Control</div>
-      </div>
-
-      <!-- Part 9: Pets & Animals -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2.5 py-1 rounded-md">Conduct</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 2.1</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Pets & Domestic Animals</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Prior Approval:</strong> No pets are permitted in any section without prior written consent from the Trustees.</li>
-            <li>• <strong>Leash Control:</strong> Approved pets must be kept on a short leash at all times when traversing common property (lobbies, walkways).</li>
-            <li>• <strong>Waste Removal:</strong> Pet owners must immediately clean up after their pets on common property.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Animal Control Bylaws</div>
-      </div>
-
-      <!-- Part 10: Refuse Disposal & Common Property Care -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct maintenance">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Conduct / Maintenance</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 6.4</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Refuse Disposal & Cleanliness</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Refuse Chutes / Bins:</strong> Household refuse must be properly bagged and disposed of strictly in designated bins or chutes. No leaking bags in corridors.</li>
-            <li>• <strong>Bulky Items:</strong> Furniture, boxes, or rubble must not be left in common hallways or lift areas.</li>
-            <li>• <strong>Littering:</strong> Throwing cigarette butts, bottles, or trash from windows or balconies is strictly prohibited.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Hygiene & Waste Management</div>
-      </div>
-
-      <!-- Part 11: Parking & Vehicles -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="conduct">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Conduct</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 7.2</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Parking Bays & Vehicles</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Bay Usage:</strong> Vehicles must be parked strictly within marked bay boundaries. No oil leaks or abandoned vehicles allowed.</li>
-            <li>• <strong>Speed Limit:</strong> Maximum speed within parking garages is 10 km/h.</li>
-            <li>• <strong>Visitor Parking:</strong> Unauthorized parking in designated visitor bays will result in wheel clamping or towing at owner's risk and expense.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Garage & Vehicle Regulations</div>
-      </div>
-
-      <!-- Part 12: Penalties, Fines & Dispute Resolution -->
-      <div class="rule-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between" data-category="management conduct">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[11px] font-bold uppercase tracking-wider text-purple-600 bg-purple-50 px-2.5 py-1 rounded-md">Enforcement</span>
-            <span class="text-xs font-semibold text-slate-400">Rule 8.1</span>
-          </div>
-          <h3 class="font-bold text-base text-slate-900 mb-2">Penalties, Fines & CSOS Conciliation</h3>
-          <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-            <li>• <strong>Breach Fines:</strong> Trustees may levy reasonable financial penalties on owners/tenants after written notice and opportunity for a hearing.</li>
-            <li>• <strong>CSOS Escalation:</strong> Unresolved disputes may be referred to the Community Schemes Ombud Service (CSOS) for formal adjudication.</li>
-          </ul>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Compliance & Dispute Resolution</div>
-      </div>
-
-    </div>
-
-    <!-- Footer Note -->
-    <footer class="mt-16 text-center text-xs text-slate-400 border-t border-slate-200 pt-6">
-      <p>Senator Park Body Corporate Digital Portal (Complete 32-Page CSOS Edition) • Maintained via GitHub Pages</p>
-    </footer>
-
-  </main>
-
-  <!-- Instant Search & Category Filter Script -->
+  <!-- Real-Time Text Search Engine -->
   <script>
     const searchInput = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.rule-card');
+    const ruleBlocks = document.querySelectorAll('.rule-block');
 
     searchInput.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(term) ? 'flex' : 'none';
+      const query = e.target.value.toLowerCase().trim();
+      ruleBlocks.forEach(block => {
+        const text = block.textContent.toLowerCase();
+        block.style.display = text.includes(query) ? 'block' : 'none';
       });
     });
-
-    function filterCategory(category, evt) {
-      document.querySelectorAll('.chip-btn').forEach(btn => {
-        btn.classList.remove('bg-slate-900', 'text-white');
-        btn.classList.add('bg-slate-100', 'text-slate-700');
-      });
-      if (evt && evt.target) {
-        evt.target.classList.remove('bg-slate-100', 'text-slate-700');
-        evt.target.classList.add('bg-slate-900', 'text-white');
-      }
-
-      cards.forEach(card => {
-        const categories = card.dataset.category ? card.dataset.category.split(' ') : [];
-        if (category === 'all' || categories.includes(category)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
   </script>
 </body>
 </html>
